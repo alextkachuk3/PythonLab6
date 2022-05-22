@@ -12,5 +12,30 @@
     <h1>Metro</h1>
 </div>
 
+{% block content %}
+    <table class="table table-striped">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Open time</td>
+            <td>Close time</td>
+            <td>Color of metro line</td>
+        </tr>
+
+        {% for station in stations_list %}
+
+            <tr>
+            <td> {{ station.id }} </td>
+            <td> {{ station.name }} </td>
+            <td> {{ station.open }} </td>
+            <td> {{ station.close }} </td>
+            <td> {{ station.line.color }} </td>
+        </tr>
+
+        {% endfor %}
+    </table>
+
+{% endblock %}
+
 </body>
 </html>

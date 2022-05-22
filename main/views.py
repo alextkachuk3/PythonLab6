@@ -1,7 +1,9 @@
 from django.shortcuts import render
 
+from .models import MetroStation
 
-# Create your views here.
 
 def metro(request):
-    return render(request, 'main/metro.html')
+    stations_list = MetroStation.objects.all()
+    return render(request, 'main/metro.html',
+                  {'stations_list': stations_list})
